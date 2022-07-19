@@ -1,0 +1,51 @@
+//{ Driver Code Starts
+//Initial Template for C
+
+
+#include <stdio.h>
+
+// } Driver Code Ends
+//User function Template for C
+
+void toBinary(int N)
+{
+    // your code here
+    int binary[10000];
+    int rem,i=0;
+    if(N==0) {
+        printf("%d",0);
+        return;
+    }
+    while(N>0){
+        rem= N%2;
+        binary[i]=rem;
+        N/=2;
+        i++;
+        
+    }
+   // int n= a.length();
+    for(i=i-1; i>=0;i--)
+    printf("%d", binary[i]);
+        
+}
+
+//{ Driver Code Starts.
+
+int main() {
+	//code
+	
+	int t;
+	scanf("%d", &t);
+	
+	
+	while(t--)
+	{
+	    int n;
+	    scanf("%d", &n);
+	    
+	    toBinary(n);
+	    printf("\n");
+	}
+	return 0;
+}
+// } Driver Code Ends
