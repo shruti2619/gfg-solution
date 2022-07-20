@@ -1,0 +1,54 @@
+//{ Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+// User function Template for C++
+
+class Solution{
+public:
+    string findLargest(int N, int S){
+        // code here
+        string s="";
+       if(S==0 && N>1) return "-1";
+        for(int i=1; i<=N; i++){
+            if(S<9 && S>0) {
+                if(S==1) s+='1';
+                if(S==2) s+='2';
+                if(S==3) s+='3';
+                if(S==4) s+='4';
+                if(S==5) s+='5';
+                if(S==6) s+='6';
+                if(S==7) s+='7';
+                if(S==8) s+='8';
+                S-=S;
+            }
+            else if(S==0) s+='0';
+            else if(S>=9){
+                s+='9';
+                S-=9;
+            }
+            else return "-1";
+        }
+        if(S!=0) return "-1";
+        return s;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N, S;
+        cin>>N>>S;
+        
+        Solution ob;
+        cout<<ob.findLargest(N, S)<<"\n";
+    }
+    return 0;
+}
+// } Driver Code Ends
