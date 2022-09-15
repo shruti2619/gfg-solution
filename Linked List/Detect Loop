@@ -43,7 +43,7 @@ struct Node
 
 */
 class Solution
-{
+{ // O(n) O(1) sol
     public:
     //Function to check if the linked list has a loop.
     bool detectLoop(Node* head)
@@ -63,6 +63,19 @@ class Solution
             }
         }
         return false;
+	/*
+	O(n) O(n) sol
+	map <Node* , bool> visited;
+        Node* temp= head;
+        
+        while(temp!=NULL){
+            if(visited[temp]) return true;
+            
+            visited[temp]= true;
+            temp= temp->next;
+        }
+        return false;
+	*/
     }
 };
 
