@@ -1,0 +1,42 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+class Solution {
+  public:
+    
+    bool has4(int i, vector<bool>& dp){
+        if(i%10==4) return true;
+        return dp[i/10];
+    }
+  
+    int countNumberswith4(int N) {
+        // code here
+        vector<bool> dp(N+1);
+        int count=0;
+        for(int i=4; i<=N ; i++){
+            if(has4(i, dp)){
+                dp[i]= true;
+                count++;
+            }
+        }
+        return count;
+    }
+};
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.countNumberswith4(N) << endl;
+    }
+    return 0;
+}
+// } Driver Code Ends
